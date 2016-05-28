@@ -155,6 +155,18 @@
 					// but there's enough here to piece together a working AJAX submission call that does.
 						window.setTimeout(function() {
 
+							var hsEntry = new String("2140717237");
+							var hsKey = new String("1J8tfBGDfrzj5slY8iSn18f-TG1nB5FObL-NnBTzuHRw");
+							var hsForm = new String("1nvfx_iRuFrIvjmD0XqLKxPS0MM6FosRhEOJMG6Vdr7E");
+							var hsInput = document.getElementById("email").value;
+
+							var hsURL = new String("http://docs.google.com/forms/d/") + hsForm + new String("/formResponse?entry.") + hsEntry
+								+ new String("=") + hsInput + new String("&submit=Submit&formkey=") + hsKey + new String("&ifq");
+
+							var xhttp = new XMLHttpRequest();
+							xhttp.open("GET", hsURL, true);
+							xhttp.send();
+
 							// Reset form.
 								$form.reset();
 
